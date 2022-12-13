@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	private int memNo;
+	private String memId;
+	private String memPass;
+	private String memKey;
+	
+ -->
+<mapper namespace="com.project.root.mybatis.member.MemberMapper">
+	<resultMap type="com.project.root.member.dto.MemberDTO" id="member">
+		<id property="memNo" column="mem_no"/>
+		<result property="memId" column="mem_id"/>
+		<result property="memPass" column="mem_pass"/>
+		<result property="memKey" column="mem_key"/>
+	</resultMap>
+	
+	<resultMap type="com.project.root.suggestions.dto.SuggestionsDTO" id="suggestions">
+		<id property="sugNo" column="sug_no"/>
+		<result property="sugSubject" column="sug_subject"/>
+		<result property="sugContent" column="sug_content"/>
+		<result property="sugRegDate" column="sug_reg_date"/>
+		<result property="sugReadCk" column="sug_read_ck"/>
+	</resultMap>
+	
+	<select id="user_check" resultMap="member">
+		select * from member where mem_id = #{id}
+	</select>
+	
+	<select id="getMemKey" resultType="String">
+		select mem_key from member where mem_id = #{id}
+	</select>
+	
+	<insert id="writeRegister">
+		insert into member values(member_seq.nextval,#{memId},#{memPass},'U')
+	</insert>	
+	
+	<select id="userCk" resultType="int">
+		select count(*) from member where mem_id = #{memId}
+	</select>
+	
+	<!--AdminController  -->
+	<insert id="sugWrite">
+		insert into sug_board values(sug_seq.nextval,#{sugSubject},#{sugContent},sysdate,'N')
+	</insert>
+
+	<select id="getSuggestionsList" resultMap="suggestions">
+		select * from sug_board 
+	</select>
+
+	<select id="sugDetail" resultMap="suggestions">
+		select * from sug_board where sug_no = #{sugNo}
+	</select>
+	
+	<update id="ReadCk">
+		update sug_board set sug_read_ck = 'Y' where sug_no = #{sugNo}
+	</update>
+	<!-- end -->
+</mapper>

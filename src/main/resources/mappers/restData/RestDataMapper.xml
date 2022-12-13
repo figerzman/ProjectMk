@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 
+	private int restNo;
+	private int basNo;
+	private String restOpenTime;
+	private String restLock;
+	private int restTol;
+	private int restUri;
+	private int restDisTol;
+	private int restDisUri;
+	private String restClTime;
+	private String restStatus;
+	private String restKey;
+	
+ -->
+<mapper namespace="com.project.root.mybatis.restdata.RestDataMapper">
+	<resultMap type="com.project.root.restdata.dto.RestDataDTO" id="restData">
+		<id property="restNo" column="rest_no"/>
+		<result property="basNo" column="bas_no"/>
+		<result property="restOpenTime" column="rest_opentime"/>
+		<result property="restLock" column="rest_lock"/>
+		<result property="restToi" column="rest_toi"/>
+		<result property="restUri" column="rest_uri"/>
+		<result property="restDisToi" column="rest_dis_toi"/>
+		<result property="restDisUri" column="rest_dis_uri"/>
+		<result property="restClTime" column="rest_cl_time"/>
+		<result property="restStatus" column="rest_status"/>
+		<result property="restKey" column="rest_key"/>
+	</resultMap>
+	
+	<resultMap type="com.project.root.restdata.dto.BasicRestDataDTO" id="basicRestData">
+      <id property="basNo" column="bas_no"/>
+      <result property="catNo" column="cat_no"/>      
+      <result property="basName" column="bas_name"/>
+      <result property="basAddr" column="bas_addr"/>
+      <result property="basLat" column="bas_lat"/>
+      <result property="basLng" column="bas_lng"/>
+      <result property="restNo" column="rest_no"/>
+      <result property="restOpenTime" column="rest_opentime"/>
+      <result property="restLock" column="rest_lock"/>
+      <result property="restToi" column="rest_toi"/>
+      <result property="restUri" column="rest_uri"/>
+      <result property="restDisToi" column="rest_dis_toi"/>
+      <result property="restDisUri" column="rest_dis_uri"/>
+      <result property="restClTime" column="rest_cl_time"/>
+      <result property="restStatus" column="rest_status"/>
+      <result property="restKey" column="rest_key"/>
+   </resultMap>
+	
+	
+	<select id="getToiletDetail" resultMap="basicRestData">
+		select R.*,B.* from rest_data R, basic_data B  where R.bas_no = B.bas_no
+	</select> 
+	
+
+</mapper>
