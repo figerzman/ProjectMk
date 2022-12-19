@@ -73,6 +73,12 @@ public class BasicController {
 	public String parking() {		
 		return "map/parking";
 	}
+	// 개발 주차장 맵
+	@RequestMapping(value = "parking2", method = RequestMethod.GET)
+	public String parking2() {		
+		return "map/parking2";
+	}
+	
 	// 대피소 맵
 	@RequestMapping(value = "shelter", method = RequestMethod.GET)
 	public String shelter() {		
