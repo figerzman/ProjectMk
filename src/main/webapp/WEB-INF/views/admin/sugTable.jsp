@@ -27,7 +27,7 @@
     <!-- Custom styles for this page -->
     <link href="resources/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
    <script type="text/javascript" src="resources/js/sugTable_js.js"></script>
-<link href="resources/css/blank_css.css" rel="stylesheet">
+<link href="resources/css/toilet_css.css" rel="stylesheet">
 <script src="resources/vendor/jquery/jquery.min.js"></script>
 <link rel="icon" href="resources/img/dowajo-favicon.ico">
 </head>
@@ -53,24 +53,12 @@ $(function () {
             <!-- Main Content -->
             <div id="content">
 
-                <!-- Topbar -->
-                <c:import url="../default/header.jsp"/>
-                <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank"
-                            href="https://datatables.net">official DataTables documentation</a>.</p>
-
-                    <!-- DataTales Example -->
-
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Suggestions List</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -129,17 +117,6 @@ $(function () {
 
             </div>
             <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Your Website 2020</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
 

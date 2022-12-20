@@ -80,7 +80,7 @@ display : block;
  			<!-- 카카오 로그인 -->
           <div id="welcome">
 	         <%if(session.getAttribute("mem_key")==null){ %>
-	       		  <p>guest</p>	
+	       		  <p>Guest</p>	
 			  <%}else if(session.getAttribute("mem_key").equals("N")){ %>
 	          	 <p>네이버 회원</p>
 			  <%}else if(session.getAttribute("mem_key").equals("U")){ %>
